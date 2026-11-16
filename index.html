@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>memoria.com for sale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: quiet, dignified, unhurried
+   IDEA: an engraved memorial plaque set in a stone wall
+   PICTURE: an arched stone niche with a softly glowing candle
+   COLOUR and TYPE: slate-plum ground, warm parchment ink, candle gold; Cormorant + Jost
+   LAYOUT: one centred composition: niche, name, price, contact */
+:root{color-scheme:light dark;
+ --bg:light-dark(#efeae3,#1b1820);--panel:light-dark(#f8f5f0,#24202b);
+ --ink:light-dark(#2a2430,#ece5d8);--soft:light-dark(#6b6270,#a99fae);
+ --gold:light-dark(#a8772c,#e2b566);--line:light-dark(#d6cec3,#3a3442)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Jost,system-ui,sans-serif;overflow-x:clip;
+ display:grid;place-items:center;padding:clamp(24px,5vw,64px) 16px}
+main{width:min(560px,100%);text-align:center}
+.niche{width:min(260px,62vw);margin:0 auto 28px;display:block}
+.flame{transform-origin:100px 122px;animation:sway 3.6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:scaleY(1) rotate(-1.5deg)}50%{transform:scaleY(1.06) rotate(1.5deg)}}
+@media(prefers-reduced-motion:reduce){.flame{animation:none}}
+.status{font-size:14px;color:var(--soft);margin:0 0 6px;letter-spacing:.02em}
+h1{font:500 clamp(44px,9vw,72px)/1.05 "Cormorant Garamond",Georgia,serif;margin:0;text-wrap:balance}
+.price{font:600 clamp(28px,5vw,36px)/1.1 "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:14px 0 0;white-space:nowrap}
+hr{width:72px;border:0;border-top:1px solid var(--line);margin:28px auto}
+.lede{color:var(--soft);margin:0 auto 22px;max-width:42ch}
+.contact{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+a.mail{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;background:var(--ink);color:var(--bg);
+ text-decoration:none;font-weight:500;font-size:16px}
+button{min-height:48px;padding:0 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font:500 15px Jost,sans-serif;cursor:pointer}
+a.mail:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.addr{display:block;margin-top:14px;font-size:15px;color:var(--soft)}
+footer{margin-top:44px;font-size:13px;color:var(--soft)}
+</style>
+</head>
+<body>
+<main>
+<svg class="niche" viewBox="0 0 200 230" aria-hidden="true">
+ <defs>
+  <radialGradient id="glow" cx="50%" cy="48%" r="50%"><stop offset="0" stop-color="#f6c871" stop-opacity=".55"/><stop offset="1" stop-color="#f6c871" stop-opacity="0"/></radialGradient>
+  <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--panel)"/><stop offset="1" stop-color="var(--line)"/></linearGradient>
+  <linearGradient id="wax" x1="0" x2="1"><stop offset="0" stop-color="#efe6d6"/><stop offset=".6" stop-color="#fbf6ec"/><stop offset="1" stop-color="#d9ccb6"/></linearGradient>
+  <linearGradient id="fl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e98a2a"/><stop offset=".55" stop-color="#f7c25a"/><stop offset="1" stop-color="#fff3cf"/></linearGradient>
+ </defs>
+ <path d="M10 228V90a90 90 0 0 1 180 0v138z" fill="url(#stone)" stroke="var(--line)" stroke-width="1.5"/>
+ <path d="M30 228V96a70 70 0 0 1 140 0v132z" fill="var(--bg)" opacity=".75"/>
+ <circle cx="100" cy="120" r="70" fill="url(#glow)"/>
+ <ellipse cx="100" cy="210" rx="46" ry="6" fill="var(--ink)" opacity=".12"/>
+ <rect x="84" y="140" width="32" height="70" rx="3" fill="url(#wax)"/>
+ <ellipse cx="100" cy="140" rx="16" ry="3.5" fill="#fffaf0"/>
+ <line x1="100" y1="140" x2="100" y2="131" stroke="#3a2f2a" stroke-width="1.6" stroke-linecap="round"/>
+ <path class="flame" d="M100 96c7 12 11 20 11 26a11 11 0 0 1-22 0c0-6 4-14 11-26z" fill="url(#fl)"/>
+ <rect x="56" y="210" width="88" height="8" rx="2" fill="var(--line)"/>
+</svg>
+
+<p class="status">This domain is for sale</p>
+<h1>memoria.com</h1>
+<p class="price">$125,000</p>
+<hr>
+<p class="lede">A global brand in the making. To enquire about purchasing it, please get in touch</p>
+<div class="contact">
+ <a class="mail" href="mailto:support@memoria.com?subject=Enquiry%3A%20memoria.com">Email us</a>
+ <button type="button" id="copy">Copy address</button>
+</div>
+<span class="addr">support@memoria.com</span>
+<footer>&copy; <span id="yr">2026</span> memoria.com</footer>
+</main>
+<script>
+{
+ const b=document.getElementById('copy');
+ document.getElementById('yr').textContent=new Date().getFullYear();
+ b.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText('support@memoria.com');b.textContent='Copied'}
+  catch(e){b.textContent='Select the address below'}
+  setTimeout(()=>b.textContent='Copy address',2200);
+ });
+}
+</script>
+</body>
+</html>
